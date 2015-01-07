@@ -60,10 +60,14 @@ public class ByConvention : IQueryBuilderMethodConvention
 But after that ugliness, you can simply define your QueryBuilder convention-based interface
 
 ```
+public class Company
+{
+    public int Id {get;set;}
+    public string Name {get;set;}
+}
 public interface ICompanyQueryBuilder : IQueryBuilder<Company>
 {
     ICompanyQueryBuilder ByName(string name);
-    ICompanyQueryBuilder ChildCompaniesContains(int childCompanyId);
 }
 ```
 
